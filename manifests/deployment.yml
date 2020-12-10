@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: sitecontagemmvpconf 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sitecontagemmvpconf
+  template:
+    metadata:
+      labels:
+        app: sitecontagemmvpconf 
+    spec:
+      containers:
+        - name: sitecontagemmvpconf 
+          image: groffeazuredevops.azurecr.io/sitecontagemmvpconf
+          ports:
+          - containerPort: 80
